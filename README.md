@@ -14,27 +14,27 @@ ES6 inclui as seguintes novas funcionalidades:
 - [Classes](#classes)
 - [Objetos Literais Aprimorados (Enhanced Object Literals)](#enhanced-object-literals)
 - [Template Strings](#template-strings)
-- [Desestruturação (Destructuring)](#destructuring)
-- [default + rest + spread](#default--rest--spread)
+- [Destructuring](#destructuring)
+- [Default + Rest + Spread](#default--rest--spread)
 - [let + const](#let--const)
-- [iterators + for..of](#iterators--forof)
-- [generators](#generators)
-- [unicode](#unicode)
-- [modules](#modules)
-- [module loaders](#module-loaders)
-- [map + set + weakmap + weakset](#map--set--weakmap--weakset)
-- [proxies](#proxies)
-- [symbols](#symbols)
-- [subclassable built-ins](#subclassable-built-ins)
-- [promises](#promises)
-- [math + number + string + array + object APIs](#math--number--string--array--object-apis)
-- [binary and octal literals](#binary-and-octal-literals)
-- [reflect api](#reflect-api)
-- [tail calls](#tail-calls)
+- [Iterators + for..of](#iterators--forof)
+- [Geradores (Generators)](#generators)
+- [Unicode](#unicode)
+- [Módulos (Modules)](#modules)
+- [Carregadores de Módulos (Module Loaders)](#module-loaders)
+- [Map + Set + WeakMap + WeakSet](#map--set--weakmap--weakset)
+- [Proxies](#proxies)
+- [Symbols](#symbols)
+- [Subclassable Built-ins](#subclassable-built-ins)
+- [Math + Number + String + Array + APIs de Objetos](#math--number--string--array--object-apis)
+- [Binário e Octal literais](#binary-and-octal-literals)
+- [Promises](#promises)
+- [Reflect API](#reflect-api)
+- [Tail Calls](#tail-calls)
 
 ## Funcionalidades ECMAScript
 
-### Setas (Arrows)
+### <a name="arrows"></a>Setas (Arrows)
 Setas são a maneira simplificada para funções usando a sintaxe `=>`. Elas são sintaticamente
 similares ao recurso relacionado em C#, Java 8 e CofeeScript. Suportam tanto corpos de blocos 
 statement, quanto os de expressões que retornam o valor da expressão. Diferentemente de funções, 
@@ -63,7 +63,7 @@ var bob = {
 }
 ```
 
-### Classes
+### <a name="classes"></a>Classes
 Classes ES6 são simplesmente um "docinho" para o padrão OO baseado em protótipos. Ter uma forma 
 declarativa, conveniente e simples de padrões de classes faz delas mais fáceis de serem usadas e 
 encoraja a interoperabilidade. Classes suportam herança baseada em protótipos, chamadas super, 
@@ -95,7 +95,7 @@ class SkinnedMesh extends THREE.Mesh {
 }
 ```
 
-### Objetos Literais Aprimorados (Enhanced Object Literals)
+### <a name="enhanced-object-literals"></a>Objetos Literais Aprimorados (Enhanced Object Literals)
 Object Literals são estendidos para dar suporte à especificação de prototype na construção, 
 simplificações para atribuições `foo: foo`, definição de métodos, chamadas super e computar propriedades 
 de nome com expressões. Juntos, estes fazem Objetos Literais e declarações de classes mais próximos e 
@@ -117,7 +117,7 @@ var obj = {
 };
 ```
 
-### Template Strings
+### <a name="template-strings"></a>Template Strings
 Template Strings proveem "açúcar sintático" para montar strings. São similares a interpolação de 
 strings em Perl, Python e outros. Opcionalmente, uma tag pode ser adicionada para permitir a 
 construção da string ser customizada, evitando ataques de injeção ou construindo estruturas de dados 
@@ -143,7 +143,7 @@ POST`http://foo.org/bar?a=${a}&b=${b}
        "bar": ${bar}}`(myOnReadyStateChangeHandler);
 ```
 
-### Desestruturação (Destructuring)
+### <a name="destructuring"></a>Destructuring
 Desestruturação permite binding usando matching de padrões com suporte para matching de arrays e 
 objetos. Desestruturação é "fail-soft", similar ao lookup padrão de objeto `foo["bar"]`, produzindo 
 valores `undefined` quando não encontrado.
@@ -175,7 +175,7 @@ var [a = 1] = [];
 a === 1;
 ```
 
-### Default + Rest + Spread
+### <a name="default--rest--spread"></a>Default + Rest + Spread
 Valores padrão de parâmetros avaliados pelo "chamador". Transforma um array em argumentos 
 consecutivos em uma chamada de função. Vincula (bind) parâmetros para array. Rest troca 
 a necessidade de argumentos e endereça casos de espaços comuns mais diretamente.
@@ -202,7 +202,7 @@ function f(x, y, z) {
 f(...[1,2,3]) == 6
 ```
 
-### Let + Const
+### <a name="let--const"></a>let + const
 `let` é o novo `var`. `const` é de atribuição única (single-assignment). Restrições de Estático 
 previnem o uso antes da atribuição.
 
@@ -222,7 +222,7 @@ function f() {
 }
 ```
 
-### Iterators + For..Of
+### <a name="iterators--forof"></a>Iterators + For..Of
 Objetos iteradores permitem iteradores personalizações como CLR IEnumerable ou Java Iterable. 
 Generalização de `for..in` para iteração customizada com `for..of`. Não é preciso array, o que 
 permite padrões lazy de design como LINQ.
@@ -263,7 +263,7 @@ interface Iterable {
 }
 ```
 
-### Geradores (Generators)
+### <a name="generators"></a>Geradores (Generators)
 Generators simplificam iterações usando `function*` and `yield`.  Uma função declarada como 
 `function*` retorna uma instância de Generator.  Generators são subtipos de iteradores que incluem 
 `next` e `throw`. Estes valores permitem voltar no gerador, então `yield` é uma forma de expressão 
@@ -303,7 +303,7 @@ interface Generator extends Iterator {
 }
 ```
 
-### Unicode
+### <a name="unicode"></a>Unicode
 Foram feitas adições para suporte total a Unicode, incluindo a nova forma literal de Unicode em 
 string e o novo modo de expressões regulares `u` para lidar com code points, tal como novas APIs 
 para processar strings no nível em código 21bit. Essas adições permitem o desenvolvimento de 
@@ -328,7 +328,7 @@ for(var c of "𠮷") {
 }
 ```
 
-### Módulos (Modules)
+### <a name="modules"></a>Módulos (Modules)
 Suporte a Módulos em nível de linguagem para definição de componentes. Codifica padrões de loaders 
 de módulos populares em JavaScript (AMD, CommonJS). Comportamente em runtime definido por um loader 
 que pode ser definido. Modelo assíncrono implícito -- nenhum código executa até os módulos 
@@ -368,8 +368,8 @@ import ln, {pi, e} from "lib/mathplusplus";
 alert("2π = " + ln(e)*pi*2);
 ```
 
-### Carregadores de Módulos (Module Loaders)
-Module loaders suporta:
+### <a name="module-loaders"></a>Carregadores de Módulos (Module Loaders)
+Module loaders suportam:
 - Carregamento Dinâmico (Dynamic loading)
 - Isolamento de Estado (State isolation)
 - Isolamento Global de Namespace (Global namespace isolation)
@@ -396,7 +396,7 @@ System.get('jquery');
 System.set('jquery', Module({$: $})); // CUIDADO: ainda não finalizado
 ```
 
-### Map + Set + WeakMap + WeakSet
+### <a name="map--set--weakmap--weakset"></a>Map + Set + WeakMap + WeakSet
 Estruturas de dados eficientes para algoritmos comuns. WeakMaps proveem coleções de pares 
 chave/valor em que as chaves são fracamente referenciadas (weakly referenced).
 
@@ -424,7 +424,7 @@ ws.add({ data: 42 });
 // Porque o objeto adicionado não possui outras referências, não será mantido no conjunto 
 ```
 
-### Proxies
+### <a name="proxies"></a>Proxies
 Proxies permitem a criação de objetos com a gama completa de comportamentos de host objects de 
 JavaScript. Podem ser usados para interceptação, virtualização de objetos, logging/profiling etc.
 
@@ -476,7 +476,7 @@ var handler =
 }
 ```
 
-### Símbolos (Symbols)
+### <a name="symbols"></a>Symbols
 Symbols são um novo tipo de primitivo que permitem controle de acesso ao estado de objeto. Permitem 
 que se use propriedades como chave tanto para `string` (como em ES5), quanto `symbol`. Opcionalmente, 
 é possível usar o parâmetro `description` em debugging -- mas não é parte da identidade. Symbols são 
@@ -506,7 +506,7 @@ var c = new MyClass("hello")
 c["key"] === undefined
 ```
 
-### Subclassable Built-ins
+### <a name="subclassable-built-ins"></a>Subclassable Built-ins
 Em ES6, built-ins como `Array`, `Date` e `Element`s DOM podem ser "subclasseados".
 
 Construção de Objeto para a função chamada `Ctor` agora usa 2 fases -- ambas virtualmente 
@@ -541,7 +541,7 @@ arr[1] = 12;
 arr.length == 2
 ```
 
-### Math + Number + String + Array + APIs de Objetos
+### <a name="math--number--string--array--object-apis"></a>Math + Number + String + Array + APIs de Objetos
 Muitas novas adições de bibliotecas, incluindo bibliotecas core d Math, helpers de conversão de 
 Array, helpers de String e `Object.assign` para copiar.
 
@@ -570,7 +570,7 @@ Array.of(1, 2, 3) // Similar to new Array(...), but without special one-arg beha
 Object.assign(Point, { origin: new Point(0,0) })
 ```
 
-### Binário e Octal literais
+### <a name="binary-and-octal-literals"></a>Binário e Octal literais
 2 novas formas de literais numéricos foram adicionados para binário (`b`) e octal (`o`).
 
 ```JavaScript
@@ -578,7 +578,7 @@ Object.assign(Point, { origin: new Point(0,0) })
 0o767 === 503 // true
 ```
 
-### Promises
+### <a name="promises"></a>Promises
 Promises são a biblioteca para programação assíncrona. Promises são a primeira representação de 
 classe para um valor que pode estar disponível no futuro.
 
@@ -598,7 +598,7 @@ var p = timeout(1000).then(() => {
 })
 ```
 
-### Reflect API
+### <a name="reflect-api"></a>Reflect API
 API completa para reflection expõe metaoperações em nível de runtime em objetos. Isso é efetivamente 
 o inverso da Proxy API e permite realizar chamadas correspondendo às mesmas metaoperações, como as 
 proxy traps. Especialmente útil para implementar proxies.
@@ -607,7 +607,7 @@ proxy traps. Especialmente útil para implementar proxies.
 // Ainda sem exemplo
 ```
 
-### Tail Calls
+### <a name="tail-calls"></a>Tail Calls
 Calls in tail-position are guaranteed to not grow the stack unboundedly.  Makes recursive algorithms safe in the face of unbounded inputs.
 
 Chamadas em tail-position (no final da instrução) garantem o não crescimento da stack de forma 
