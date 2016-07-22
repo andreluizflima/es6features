@@ -608,8 +608,6 @@ proxy traps. Especialmente útil para implementar proxies.
 ```
 
 ### <a name="tail-calls"></a>Tail Calls
-Calls in tail-position are guaranteed to not grow the stack unboundedly.  Makes recursive algorithms safe in the face of unbounded inputs.
-
 Chamadas em tail-position (no final da instrução) garantem o não crescimento da stack de forma 
 descontrolada. Fazer algoritmos recursivos de forma segura em face a inputs descontrolados.
 
